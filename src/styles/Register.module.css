@@ -1,0 +1,230 @@
+.container {
+  /*background: url(/background.jpg) no-repeat center center fixed; /* Latar belakang */
+  background-size: cover; /* Agar gambar latar belakang menutupi seluruh layar */
+  font-family: 'Poppins', sans-serif;
+  height: 100vh; /* Mengisi penuh tinggi layar */
+  width: 100%; /* Mengisi penuh lebar layar */
+  margin: 0; /* Menghilangkan margin di sekitar container */
+  padding: 0; /* Menghilangkan padding di sekitar container */
+  box-sizing: border-box; /* Memastikan padding dan border dihitung dalam ukuran elemen */
+  position: relative;
+  display: flex; /* Menggunakan flexbox untuk menyusun card di tengah */
+  justify-content: center; /* Menempatkan card di tengah horizontal */
+  align-items: flex-start; /* Mengubah align-items untuk menempatkan card lebih ke atas */
+  padding-top: 20px; /* Memberikan ruang agar card tidak terlalu rapat dengan atas layar */
+}
+
+.card {
+  width: 100%;
+  max-width: 930px;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.minititle {
+  font-size: 12px;
+  text-align: center;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.inputContainer {
+  flex: 1;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: lighter;
+  margin-bottom: 15px; 
+
+}
+
+.input {
+  width: 100%;
+  height: 35px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 35px;
+  font-size: 12px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:focus-within {
+  border-color: #05adee;
+  box-shadow: 0 0 5px rgba(38, 34, 255, 0.5);
+}
+
+.button {
+  padding: 10px 30px;
+  font-size: 16px;
+  background-color: #05adee;
+  color: white;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s transform 0.8s;
+  width: auto;
+  max-width: 250px;
+  margin-top: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.button:hover {
+  background-color: #fff100;
+  color: black;
+  transform: scale(1.05);
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.alertContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.alertContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.alertCard {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.alertButton {
+  background: #05adee;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.alertButton:hover {
+  background: #fff100;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mainContent {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .minititle {
+    font-size: 10px;
+  }
+
+  .button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    box-shadow: none;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .minititle {
+    font-size: 9px;
+  }
+
+  .button {
+    padding: 12px 20px;
+  }
+}

@@ -1,0 +1,145 @@
+/* Sidebar Container */
+.sidebar {
+  width: 180px;
+  background-color: #04adee; 
+  padding: 10px 20px;
+  height: 100%; 
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+  position: relative;
+  overflow: hidden; 
+}
+
+/* Logo */
+.icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+/* Menu Title */
+.menuTitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Menu Item */
+.menuItem {
+  margin: 10px 0;
+  font-size: 12px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Menu Item Hover */
+.menuItem:hover {
+  background-color: #1b7399; 
+  border-top-left-radius: 20px; 
+  border-bottom-left-radius: 20px; 
+  margin: 0px -20px 10px 0px;
+}
+
+/* Menu Item Aktif */
+.menuItem.active {
+  background-color: #ffffff;
+  color: #04adee;
+  border-top-left-radius: 20px; 
+  border-bottom-left-radius: 20px; 
+  margin: 0px -20px 20px 0px; 
+  font-weight: bold;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), 
+              -4px -4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Link dalam Menu Item */
+.menuItem a {
+  text-decoration: none;
+  color: inherit; 
+  flex-grow: 1; 
+}
+
+/* Submenu Dropdown */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  margin-top: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #04adee;
+  opacity: 0;
+  visibility: hidden; 
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+/* Tampilkan Dropdown Saat Hover */
+.menuItem:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.menuItem.active .dropdown {
+  opacity: 1;
+  font-weight: bold;
+  visibility: visible;
+}
+
+/* Submenu Item */
+.dropdown .menuItem {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+/* Submenu Hover dan Aktif */
+.dropdown .menuItem:hover {
+  background-color: #1b7399;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.dropdown .menuItem.active {
+  background-color: #1b7399; 
+  color: #ffffff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), 
+              -4px -4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Ikon Panah */
+.arrowIcon {
+  width: 12px;
+  height: 12px;
+  fill: rgb(255, 255, 255); 
+  transition: transform 0.3s ease; 
+  position: absolute; 
+  align-items: center;
+  right: 0px; 
+}
+
+.menuItem:hover .arrowIcon {
+  transform: rotate(180deg);
+  right: 20px;
+}
+
+/* Mengubah warna panah menjadi hitam ketika dropdown aktif */
+.menuItem.active .arrowIcon {
+  fill: #04adee;
+  right: 20px;
+}
+

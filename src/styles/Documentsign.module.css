@@ -1,0 +1,356 @@
+  .mainContent {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    padding-top: 20px;
+  }
+  
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 1050px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+  }
+
+  .cardTitleContainer {
+    background-color: #1b7399; 
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin: -20px -20px 20px -20px; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .cardTitleIcon {
+    font-size: 20px;
+    color: #fff; 
+    margin-right: 10px; 
+  }
+  
+  .cardTitleText {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff; 
+    margin: 0; 
+  }
+  
+  .card h1 {
+    font-size: 20px; 
+    margin-bottom: 30px;
+    color: #29a8df;
+  }
+  
+  .tableContainer {
+    width: 100%; 
+    overflow-x: auto; 
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border-radius:25px;
+    font-size: 14px;
+    min-width: 900px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px 8px;
+    border: 0px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #29a8df;
+    font-weight: bold;
+    color: #ffffff;
+    border: 1px solid #ddd;
+    font-size: 10px;
+  }
+
+  .table tr {
+    font-size: 10px; 
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+  
+  .table tr:hover {
+    background-color: #c4c4c4;
+  }
+  
+  .actionButton {
+    padding: 4px 6px;
+    font-size: 10px; 
+    color: #fff;
+    background-color: #1b7399;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .actionButton:hover {
+    background-color: #051941;
+    color: #fff;
+  }
+
+  .searchFilterContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .searchInputWrapper {
+    display: flex;
+    align-items: center;
+    position: relative; 
+    margin-right: 15px;
+  }
+  
+  .searchInput {
+    padding: 6px 30px 6px 10px;
+    width: 250px;
+    max-width: 300px;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    transition: border-color 0.3s ease-in-out;
+    font-size: 10px;
+    outline: none;
+  }
+  
+  .searchInput:focus {
+    border-color: #29a8df;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  .searchIcon {
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .filterContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filterContainer select {
+    padding: 6px 10px;
+    width: 150px;
+    max-width: 200px;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    transition: border-color 0.3s ease-in-out;
+    font-size: 10px;
+    outline: none;
+  }
+  
+  .filterContainer select:focus {
+    border-color: #29a8df;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  .filterIcon {
+    margin-right: 8px;
+    font-size: 14px;
+    color: #888;
+  }
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+  }
+  
+  .modal {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .closeModal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .closeModal:hover {
+    color: #ff0000;
+  }
+  
+  .h2 {
+    margin-top: 0;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;  
+  }
+  
+  .inputContainer {
+    display: flex;
+    align-items: center; 
+    gap: 6px; 
+  }
+  
+  .label {
+    font-weight: bold;
+    font-size: 10px; 
+    color: #333;
+    width: 120px;  
+    text-align: left;  
+  }
+  
+  .inputBox {
+    padding: 5px;
+    font-size: 10px;
+    border: 0px solid #ccc;
+    padding-left: 20px;
+    background-color: #ffffff;
+    color: #333;
+    flex-grow: 1;
+    border-bottom: 1px solid #ddd;
+  }
+
+  
+  .inputBox:disabled {
+    background-color: #e9e9e9;
+  }
+  
+  .inputBox:hover {
+    background-color: #e5e5e5;
+  }
+  
+  .statusButton {
+    display: flex;
+    align-items: center;
+    padding: 3px 6px;
+    font-size: 10px;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    cursor: default;
+    gap: 5px;
+  }
+  
+  .statusButton.completed {
+    background-color: #008205;
+    font-size: 9px; 
+  }
+  
+  .statusButton.expired {
+    background-color: #ff1100;
+    font-size: 9px; 
+  }
+
+  .statusButton.blocked {
+    background-color: #840900;
+    font-size: 9px; 
+  }
+
+  .statusButton.process {
+    background-color: #fff100;
+    color: black;
+    font-size: 9px; 
+  }
+
+  .statusButton.uploaded {
+    background-color: #00d207;
+    color: white;
+    font-size: 9px; 
+  }
+  
+  .statusButton .icon {
+    font-size: 12px; 
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: right; 
+    margin-top: 20px; 
+    gap: 3px;  
+  }
+  
+  .pageButton {
+    padding: 5px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    border: 0px solid #ccc;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+  .pageButton:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .prevButton, .nextButton {
+    font-weight: bold;
+    border-radius: 5px; 
+  }
+  
+  .activePage {
+    background-color: #29a8df;
+    color: white;
+  }
+
+  .firstButton, .lastButton {
+    background-color: #29a8df;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  
+  .firstButton:disabled, .lastButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+

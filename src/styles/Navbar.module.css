@@ -1,0 +1,92 @@
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 5px 20px;
+    color: white;
+  }
+  
+  .burgerMenu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .burgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 2px 0;
+  }
+  
+  .navLinks {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .profileSection {
+    display: flex;
+    align-items: center; 
+    gap: 15px;
+  }
+  
+  .profileIcon {
+    font-size: 30px;
+    color: rgb(178, 175, 175);
+  }
+  
+  
+  .logoutButton {
+    background-color: #1b7399;
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    transition: background 0.3s ease;
+  }
+  
+  .logoutButton:hover {
+    background-color: rgb(178, 175, 175);
+    color: rgb(0, 0, 0);  }
+  
+  .logoutButton .logoutIcon {
+    margin-left: 10px; 
+    font-size: 12px;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+  }
+  
+  .dropdownMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdownMenu li {
+    margin-bottom: 10px;
+  }
+  
+  .dropdownMenu li a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .dropdownMenu li a:hover {
+    text-decoration: underline;
+  }
+  

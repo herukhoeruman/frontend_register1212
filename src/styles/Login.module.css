@@ -1,0 +1,271 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: white;
+  background: url(/background.jpg);
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.formContainer {
+  background: rgba(255, 255, 255, 0.575);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 50px 50px;
+  border-radius: 20px;
+  /* box-shadow: 0 8px 20px rgba(247, 244, 244, 0.473); */
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.title {
+  margin-top: 30px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000;
+}
+
+.minititle {
+  color: #6e6e6e;
+  font-size: 10px;
+  margin-top: 0;
+  padding-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 35px;
+  border: 1px solid #ddd;
+  padding: 8px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;
+  box-sizing: border-box;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  -ms-border-radius: 35px;
+  -o-border-radius: 35px;
+  /*background-color: #05adee;*/
+}
+
+.input {
+  flex: 1;
+  /* padding: 8px 15px; */
+  border: none;
+  font-size: 12px;
+  outline: none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  height: 20px;
+  background-color: white;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input:-webkit-autofill {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  color: inherit !important;
+  border-color: inherit !important;
+}
+
+.input#email:-webkit-autofill {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+}
+
+
+.inputContainer:focus {
+  outline: none;
+}
+
+.inputContainer:focus-within {
+  border-color: #05adee;
+  box-shadow: 0 0 5px rgba(38, 34, 255, 0.5);
+}
+
+
+@keyframes borderAnimation {
+  0% {
+      box-shadow: 0 -5px 10px rgba(216, 50, 50, 0.2);
+  }
+
+  100% {
+      box-shadow: 0 0 5px rgba(255, 41, 34, 0.5);
+  }
+}
+
+.inputLabel {
+  display: block;
+  font-size: 12px;
+  padding: 0px 10px;
+  color: #000000;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.inputIcon {
+  position: absolute;
+  margin-left: 25px;
+  margin-right: 20px;
+  color: #909fa5;
+  font-size: 15px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.separator {
+  height: 20px;
+  width: 1px;
+  background-color: #909fa5;
+  margin-right: 10px;
+  margin-left: 60px;
+}
+
+.button {
+  background-color: #05adee;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  width: auto;
+  max-width: 200px;
+  margin: 15px auto 0;
+}
+
+.button:hover {
+  background-color: #fff100;
+  color: #000000;
+}
+
+.link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.link a {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  margin-bottom: 0px;
+  font-size: 10px;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 20px; 
+  top: 50%;
+  transform: translateY(-50%);
+  color: #909fa5;
+  font-size: 15px;
+  cursor: pointer; 
+}
+
+/* Responsiveness for Mobile Devices */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 40px;
+    max-width: 70%; /* Lebar form menyesuaikan layar */
+    margin: 0 20px; /* Memberi jarak dengan tepi layar */
+  }
+
+  .title {
+    font-size: 14px; /* Ukuran font yang lebih kecil */
+  }
+
+  .inputContainer {
+    max-width: 100%; /* Input form menyesuaikan layar */
+    margin-bottom: 15px; /* Jarak antar input di layar kecil */
+  }
+
+  .button {
+    width: 30%; /* Tombol memenuhi lebar container */
+    margin-top: 20px; /* Memberi jarak lebih antara tombol dan input */
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 25px;
+    max-width: 75%; /* Lebar form menyesuaikan lebih kecil */
+    margin: 0 10px; /* Memberi jarak dengan tepi layar yang lebih kecil */
+  }
+
+  .input {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 10px;
+    margin-top: 20px; /* Jarak antar tombol dan input */
+  }
+}
+
+/* Small Devices like very small phones */
+@media (max-width: 320px) {
+  .formContainer {
+    padding: 10px;
+    max-width: 100%; /* Lebar penuh */
+    margin: 0 5px; /* Jarak kecil dengan tepi layar */
+  }
+
+  .inputContainer {
+    margin-bottom: 12px;
+  }
+
+  .button {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+}
+
