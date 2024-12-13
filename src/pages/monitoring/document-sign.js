@@ -120,7 +120,7 @@ const DocumentSign = () => {
                   <option value="completed">Completed</option>
                   <option value="link_expired">Link Expired</option>
                   <option value="blocked">Blocked</option>
-                  <option value="process">Processing</option>
+                  <option value="processing">Processing</option>
                   <option value="uploaded">Uploaded</option>
                 </select>
               </div>
@@ -148,9 +148,21 @@ const DocumentSign = () => {
                       <td>{row.signing_url}</td>                                            
                       <td>
                         <button
-                          className={`${styles.statusButton} ${row.status === 'completed' ? styles.completed : styles.expired}`}
+                          className={`${styles.statusButton} ${
+                            row.status === 'completed' ? styles.completed :
+                            row.status === 'link_expired' ? styles.expired :
+                            row.status === 'processing' ? styles.processing :
+                            row.status === 'blocked' ? styles.blocked :
+                            row.status === 'uploaded' ? styles.uploaded : ''
+                          }`}
                         >
-                          <i className={`fa-solid ${row.status === 'completed' ? 'fa-check' : 'fa-times'}`}></i>
+                          <i className={`fa-solid ${
+                            row.status === 'completed' ? 'fa-check' :
+                            row.status === 'link_expired' ? 'fa-times' :
+                            row.status === 'processing' ? 'fa-spinner' :
+                            row.status === 'blocked' ? 'fa-ban' :
+                            row.status === 'uploaded' ? 'fa-upload' : ''
+                          }`}></i>
                           {row.status.charAt(0).toUpperCase() + row.status.slice(1)}
                         </button>
                       </td>

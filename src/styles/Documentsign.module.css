@@ -90,7 +90,7 @@
   }
   
   .table tr:hover {
-    background-color: #c4c4c4;
+    background-color: #b5b9bb;
   }
   
   .actionButton {
@@ -289,7 +289,7 @@
     font-size: 9px; 
   }
 
-  .statusButton.process {
+  .statusButton.processing {
     background-color: #fff100;
     color: black;
     font-size: 9px; 

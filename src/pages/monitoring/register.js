@@ -160,13 +160,21 @@ const Register = () => {
                       <td>{formatDate(row.dob)}</td>
                       <td>{row.unit_pln?.nama}</td>
                       <td>
-                        <button
-                          className={`${styles.statusButton} ${row.status === 'verified' ? styles.verified : styles.pending}`}
-                        >
-                          <i className={`fa-solid ${row.status === 'verified' ? 'fa-check' : 'fa-times'}`}></i>
-                          {row.status.charAt(0).toUpperCase() + row.status.slice(1)}
-                        </button>
-                      </td>
+                      <button
+                        className={`${styles.statusButton} ${
+                          row.status === 'verified' ? styles.verified :
+                          row.status === 'pending' ? styles.pending :
+                          row.status === 'rejected' ? styles.rejected : ''
+                        }`}
+                      >
+                        <i className={`fa-solid ${
+                          row.status === 'verified' ? 'fa-check' :
+                          row.status === 'pending' ? 'fa-spinner' :
+                          row.status === 'rejected' ? 'fa-ban' : ''
+                        }`}></i>
+                        {row.status.charAt(0).toUpperCase() + row.status.slice(1)}
+                      </button>
+                    </td>
                       <td>
                         <button className={styles.actionButton} onClick={() => openModal(row)}>
                           <i className="fa-solid fa-outdent" style={{ marginRight: '5px' }}></i>
@@ -276,6 +284,12 @@ const Register = () => {
                 <label className={styles.label}>Status</label>
                 <div className={styles.inputBox}>{selectedRow.status}</div>
               </div>
+              {selectedRow.status === 'rejected' && (
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Reject Reason</label>
+                <div className={styles.inputBox}>{selectedRow.reject_reason?.reason}</div>
+              </div>
+              )}
             </div>
           </div>
         </div>
