@@ -57,7 +57,7 @@ const Register = () => {
       row.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       row.nik?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       row.privy_id?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      row.id?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      row.registration_url?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       row.phone?.includes(searchTerm)) &&
     (statusFilter ? row.status === statusFilter : true)
   );
@@ -136,7 +136,7 @@ const Register = () => {
               <table className={styles.table}>
                 <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>Registration URL</th>
                     <th>Email</th>
                     <th>Privy ID</th>
                     <th>Phone</th>
@@ -151,7 +151,7 @@ const Register = () => {
                 <tbody>
                   {filteredData.map((row) => (
                     <tr key={row.id} onClick={() => openModal(row)}>
-                      <td>{row.id}</td>
+                      <td>{row.registration_url}</td>
                       <td>{row.email}</td>
                       <td>{row.privy_id}</td>
                       <td>{row.phone}</td>
@@ -241,8 +241,8 @@ const Register = () => {
             <h2 className={styles.h2}>Detail Information</h2>
             <div className={styles.modalContent}>
               <div className={styles.inputContainer}>
-                <label className={styles.label}>ID</label>
-                <div className={styles.inputBox}>{selectedRow.id}</div>
+                <label className={styles.label}>Registration URL</label>
+                <div className={styles.inputBox}>{selectedRow.registration_url}</div>
               </div>
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Reference Number</label>
@@ -283,6 +283,14 @@ const Register = () => {
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Status</label>
                 <div className={styles.inputBox}>{selectedRow.status}</div>
+              </div>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Created</label>
+                <div className={styles.inputBox}>{selectedRow.createdAt}</div>
+              </div>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Updated</label>
+                <div className={styles.inputBox}>{selectedRow.updatedAt}</div>
               </div>
               {selectedRow.status === 'rejected' && (
               <div className={styles.inputContainer}>
