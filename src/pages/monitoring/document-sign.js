@@ -239,10 +239,13 @@ const DocumentSign = () => {
                 <div className={styles.inputBox}>{selectedRow.no_trx}</div>
               </div>
               <div className={styles.inputContainer}>
+                <label className={styles.label}>Type Transaksi</label>
+                <div className={styles.inputBox}>{selectedRow.type_trx}</div>
+              </div>
+              <div className={styles.inputContainer}>
                 <label className={styles.label}>Reference Number</label>
                 <div className={styles.inputBox}>{selectedRow.reference_number}</div>
               </div>
-              
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Channel ID</label>
                 <div className={styles.inputBox}>{selectedRow.channel_id}</div>
@@ -252,18 +255,92 @@ const DocumentSign = () => {
                 <div className={styles.inputBox}>{selectedRow.document_token}</div>
               </div>
               <div className={styles.inputContainer}>
-                <label className={styles.label}>URL Sign</label>
-                <div className={styles.inputBox}>{selectedRow.signing_url}</div>
+                {selectedRow.signing_url ? (
+                  <>
+                    <label className={styles.label}>URL Sign</label>
+                    <div className={styles.inputBox}>{selectedRow.signing_url}</div>
+                  </>
+                ) : (
+                  <>
+                    <label className={styles.label}>URLS Sign</label>
+                    <div className={styles.inputBox}>
+                      {selectedRow.signing_urls ? (
+                        Object.values(selectedRow.signing_urls).join(', ') || '-'
+                      ) : (
+                        '-'
+                      )}
+                    </div>
+                  </>
+                )}
               </div>
               <div className={styles.inputContainer}>
                 <label className={styles.label}>File</label>
                 <div className={styles.inputBox}>{selectedRow.file_name}</div>
               </div>
               <div className={styles.inputContainer}>
+                <label className={styles.label}>Created</label>
+                <div className={styles.inputBox}>{selectedRow.createdAt}</div>
+              </div>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Updated</label>
+                <div className={styles.inputBox}>{selectedRow.updatedAt}</div>
+              </div>
+              <div className={styles.inputContainer}>
                 <label className={styles.label}>Status</label>
                 <div className={styles.inputBox}>{selectedRow.status}</div>
               </div>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Recipient Count</label>
+                <div className={styles.inputBox}>{selectedRow.recipient_count}</div>
+              </div>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>e-Meterai Count</label>
+                <div className={styles.inputBox}>{selectedRow.e_meterai_count}</div>
+              </div>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>e-Meterai Doc Category</label>
+                <div className={styles.inputBox}>{selectedRow.e_meterai?.doc_category || "-"}</div>
+              </div>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>e-Meterai Stamp Position</label>
+                <div className={styles.inputBox}>
+                  Page: {selectedRow.e_meterai?.stamp_position?.[0]?.page || "-"},
+                  X: {selectedRow.e_meterai?.stamp_position?.[0]?.pos_x || "-"},
+                  Y: {selectedRow.e_meterai?.stamp_position?.[0]?.pos_y || "-"}
+                </div>
+              </div>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Recipient Details</label>
+                <div className={styles.inputBox}>
+                  {selectedRow.recipients && selectedRow.recipients.length > 0 ? (
+                    <div className={styles.recipientTable}>
+                      {/* Header */}
+                      <div className={styles.recipientHeader}>
+                        {Object.keys(selectedRow.recipients[0]).map((key) => (
+                          <span key={key} className={styles.recipientHeaderCell}>
+                            {key}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Rows */}
+                      {selectedRow.recipients.map((recipient, index) => (
+                        <div key={index} className={styles.recipientRow}>
+                          {Object.values(recipient).map((value, valueIndex) => (
+                            <span key={valueIndex} className={styles.recipientCell}>
+                              {value || "-"}
+                            </span>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    "-"
+                  )}
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       )}
